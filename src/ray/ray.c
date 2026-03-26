@@ -1,6 +1,6 @@
 #include "ray.h"
 
-/* Returns the point along the ray at parameter t: P = origin + t * direction */
+/* Returns origin + t * direction — the point the ray reaches at parameter t. */
 t_vec3	ray_at(t_ray ray, double t)
 {
 	return (vec3_add(ray.origin, vec3_scale(ray.direction, t)));

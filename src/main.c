@@ -47,10 +47,15 @@ int	main(void)
 
 	if (!init_sdl(&window, &surface))
 		return (1);
-	pos    = (t_vec3){0.0, 0.0, 5.0};
-	target = (t_vec3){0.0, 0.0, 0.0};
-	up     = (t_vec3){0.0, 1.0, 0.0};
-	camera = camera_init(pos, target, up, 90.0, WIDTH, HEIGHT);
+	/*
+	** Camera placed at ~17° above the equatorial plane, 20 units out.
+	** This angle reveals both the disk's top face and the lensed image
+	** of the bottom face bent over the black hole.
+	*/
+	pos    = (t_vec3){0.0, 6.0, 18.0};
+	target = (t_vec3){0.0, 0.0,  0.0};
+	up     = (t_vec3){0.0, 1.0,  0.0};
+	camera = camera_init(pos, target, up, 55.0, WIDTH, HEIGHT);
 	render(surface, camera);
 	event_loop(window);
 	SDL_DestroyWindow(window);
