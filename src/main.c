@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "camera/camera.h"
 #include "render/render.h"
+#include "background/background.h"
 
 #define WIDTH	800
 #define HEIGHT	600
@@ -56,8 +57,11 @@ int	main(void)
 	target = (t_vec3){0.0, 0.0,  0.0};
 	up     = (t_vec3){0.0, 1.0,  0.0};
 	camera = camera_init(pos, target, up, 55.0, WIDTH, HEIGHT);
+	if (!skybox_init("assets/skybox.avif"))
+		fprintf(stderr, "Warning: skybox not loaded — using black background\n");
 	render(surface, camera);
 	event_loop(window);
+	skybox_destroy();
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 	return (0);

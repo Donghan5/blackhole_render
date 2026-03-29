@@ -2,7 +2,7 @@ NAME	= blackhole
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -O2 -std=c99 $(shell sdl2-config --cflags)
-LDFLAGS	= $(shell sdl2-config --libs) -lm
+LDFLAGS	= $(shell sdl2-config --libs) -lm -lavif
 
 SRCS	= src/main.c \
 		  src/math/vec3.c \
