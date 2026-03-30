@@ -81,7 +81,7 @@ static t_color	blackbody_rgb(double u)
 	t_color	c;
 
 	/* Red: rises quickly from low temperature, saturates early */
-	c.r = fmin(1.0, 1.8 * u + 0.2);
+	c.r = fmin(1.0, 1.8 * u);
 
 	/* Green: peaks around mid temperature */
 	c.g = fmin(1.0, 2.0 * u * u + 0.3 * u);

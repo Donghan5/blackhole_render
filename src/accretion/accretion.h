@@ -5,7 +5,7 @@
 
 /* Disk geometry — equatorial plane (z = 0) */
 # define ACCRETION_R_IN   1.5    /* inner edge: 3rs/2 (photon sphere), rs=1 */
-# define ACCRETION_R_OUT  10.0   /* outer edge */
+# define ACCRETION_R_OUT  4.0   /* outer edge */
 
 /*
 ** t_disk_hit: result of disk intersection check.
